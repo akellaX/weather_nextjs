@@ -1,4 +1,4 @@
-import styles from './navBar.module.css';
+import styles from './NavBar.module.css';
 
 const feedItems = [
   'My Feed',
@@ -21,7 +21,7 @@ const weatherItems = [
 
 export default function NavBar() {
   return (
-    <div className={styles.navBar}>
+    <nav className={styles.navBar}>
       <div className={styles.navBarItem}>
         {feedItems.map((item) => (
           <div className={styles.navBarLinkItem}>
@@ -41,6 +41,6 @@ export default function NavBar() {
         ))}
       </div>
       <div className={styles.navBarItem} />
-    </div>
+    </nav>
   );
 }

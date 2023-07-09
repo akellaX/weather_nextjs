@@ -1,4 +1,4 @@
-.nav-bar {
+.navBar {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -17,28 +17,29 @@
     line-height: 20px;
 }
 
-.nav-bar-item {
+.navBarItem {
     display: flex;
     flex-direction: row;
 }
 
-.nav-bar-weather-item {
+.navBarWeatherItem {
     display: grid;
-    grid-template-columns: repeat(auto-fill, auto);
+    flex-grow: 1;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));;
     grid-template-rows:auto;
     grid-auto-rows: 0;
     border: 1px solid red;
     overflow: hidden;
 }
 
-.nav-bar-link-item {
+.navBarLinkItem {
     padding: 10px 16px;
 }
 
-.nav-bar-link-item-text {
+.navBarLinkItemText {
     text-decoration: none;
 }
 
-.nav-bar-link-item-text:hover {
+.navBarLinkItemText:hover {
     border-bottom: 2px solid #e5e5e5;
 }
