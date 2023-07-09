@@ -6,6 +6,6 @@ module.exports = {
             preset: 'default',
         }),
         require('postcss-flexbugs-fixes'),
-        require('stylelint')
-    ]
-}
+        require('stylelint'),
+    ],
+};
