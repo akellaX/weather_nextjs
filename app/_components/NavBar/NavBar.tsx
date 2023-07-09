@@ -1,5 +1,13 @@
-import styles from './NavBar.module.css';
+'use client';
 
+import styles from './NavBar.module.css';
+import { WINDOW_SIZES } from '@/constants/windowSizes';
+
+const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
+  MOBILE: 2,
+  TABLET: 3,
+  DESKTOP: 11,
+};
 const feedItems = [
   'My Feed',
   'Following',
@@ -24,7 +32,7 @@ export default function NavBar() {
     <nav className={styles.navBar}>
       <div className={styles.navBarItem}>
         {feedItems.map((item) => (
-          <div className={styles.navBarLinkItem}>
+          <div key={item} className={styles.navBarLinkItem}>
             <p className={styles.navBarLinkItemText}>
               {item}
             </p>
@@ -33,7 +41,7 @@ export default function NavBar() {
       </div>
       <div className={styles.navBarWeatherItem}>
         {weatherItems.map((item) => (
-          <div className={styles.navBarWeatherItem}>
+          <div key={item} className={styles.navBarWeatherItem}>
             <p className={styles.navBarLinkItemText}>
               {item}
             </p>
