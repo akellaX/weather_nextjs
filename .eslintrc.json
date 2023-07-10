@@ -18,7 +18,24 @@
         "sourceType": "module"
     },
     "plugins": ["react", "@typescript-eslint"],
-    "rules": {
-        "@typescript-eslint/no-empty-function": "off"
-    }
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx",
+                "*.js"
+            ],
+            "rules": {
+                "@typescript-eslint/no-empty-function": "off"
+            }
+        },
+        {
+            "files": [
+                "*.css"
+            ],
+            "rules": {
+                "camelcase": "error"
+            }
+        }
+    ]
 }

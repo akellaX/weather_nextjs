@@ -22,16 +22,6 @@
     flex-direction: row;
 }
 
-.navBarWeatherItem {
-    display: grid;
-    flex-grow: 1;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    grid-template-rows: auto;
-    grid-auto-rows: 0;
-    border: 1px solid red;
-    overflow: hidden;
-}
-
 .navBarLinkItem {
     padding: 10px 16px;
 }

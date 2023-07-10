@@ -1,14 +1,5 @@
-'use client';
-
 import styles from './NavBar.module.css';
 import { WINDOW_SIZES } from '@/constants/windowSizes';
-
-const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
-    MOBILE: 2,
-    TABLET: 3,
-    DESKTOP: 11,
-};
-const feedItems = ['My Feed', 'Following'];
 
 const weatherItems = [
     'Weather',
@@ -22,9 +13,18 @@ const weatherItems = [
     'Air Quality',
     'Fire Information',
     'Earthquakes',
+    'Records And Averages',
 ];
 
+const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
+    MOBILE: 3,
+    TABLET: 5,
+    DESKTOP: 11,
+};
+const feedItems = ['My Feed', 'Following'];
+
 export default function NavBar() {
+    const shownWeatherItems = weatherItems.slice(0, NUMBER_OF_ITEMS.DESKTOP);
     return (
         <nav className={styles.navBar}>
             <div className={styles.navBarItem}>
@@ -36,11 +36,11 @@ export default function NavBar() {
                     </div>
                 ))}
             </div>
-            <div className={styles.navBarWeatherItem}>
-                {weatherItems.map((item) => (
+            <div className={styles.navBarItem}>
+                {shownWeatherItems.map((item) => (
                     <div
                         key={item}
-                        className={styles.navBarWeatherItem}>
+                        className={styles.navBarLinkItem}>
                         <p className={styles.navBarLinkItemText}>{item}</p>
                     </div>
                 ))}

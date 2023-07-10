@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "next lint --fix",
-        "stylelint": "stylelint '**/*.css' --fix",
+        "stylelint:fix": "stylelint '**/*.css' --fix",
         "format": "prettier --check --ignore-path .gitignore .",
         "format:fix": "prettier --write --ignore-path .gitignore ."
     },
@@ -21,10 +21,11 @@
         "*.{js,jsx,ts,tsx}": [
             "eslint --fix",
             "prettier --write",
+
             "git add"
         ],
         "*.{css,scss}": [
-            "stylelint --fix",
+            "npm run stylelint:fix",
             "prettier --write",
             "git add"
         ]
@@ -52,7 +53,7 @@
         "postcss-preset-env": "^9.0.0",
         "prettier": "^3.0.0",
         "stylelint": "^15.10.1",
-        "stylelint-config-standard-scss": "^10.0.0",
+        "stylelint-config-recommended": "^13.0.0",
         "stylelint-webpack-plugin": "^4.1.1"
     }
 }

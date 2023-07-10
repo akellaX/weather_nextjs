@@ -1,11 +1,17 @@
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
+import postcssPresetEnv from 'postcss-preset-env';
+import stylelint from 'stylelint';
+
 module.exports = {
     plugins: [
-        require('postcss-preset-env'),
-        require('autoprefixer'),
-        require('cssnano')({
+        postcssPresetEnv(),
+        autoprefixer(),
+        cssnano({
             preset: 'default',
         }),
-        require('postcss-flexbugs-fixes'),
-        require('stylelint'),
+        postcssFlexbugsFixes(),
+        stylelint(),
     ],
 };
