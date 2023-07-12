@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbo --show-all",
     "build": "next build --turbo",
     "start": "next start",
     "lint": "next lint",
@@ -12,7 +12,8 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cypress:open": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -41,6 +42,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@cypress/webpack-dev-server": "^3.5.0",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
     "@storybook/addon-links": "^7.0.27",
@@ -48,11 +50,13 @@
     "@storybook/nextjs": "^7.0.27",
     "@storybook/react": "^7.0.27",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/cypress-image-snapshot": "^3.1.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "cypress": "^12.17.1",
+    "cypress-image-snapshot": "^4.0.1",
     "eslint": "8.44.0",
     "eslint-config-next": "^13.1.1",
     "eslint-plugin-storybook": "^0.6.12",
@@ -66,5 +70,8 @@
     "stylelint": "^15.10.1",
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-webpack-plugin": "^4.1.1"
+  },
+  "overrides": {
+    "cypress": "^12.17.1"
   }
 }
