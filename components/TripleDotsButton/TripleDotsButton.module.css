@@ -1,0 +1,20 @@
+.tripleDotsButtonWrapper {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    background: #FFF;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        background: #f2f2f2;
+    }
+}
+
+.text {
+    padding-bottom: 8px;
+    font-size: 18px;
+}

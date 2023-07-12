@@ -1,7 +1,7 @@
 .navBar {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
     padding: 0 20px;
@@ -20,6 +20,21 @@
 .navBarItem {
     display: flex;
     flex-direction: row;
+
+}
+
+.navBarItemFeed {
+    &:after {
+        content: "";
+        height: 14px;
+        align-self: center;
+        padding-inline-start: 18px;
+        border-inline-end: 1px solid rgb(206, 206, 206);
+    }
+}
+
+.navBarItemWeather {
+    padding-inline-start: 18px;
 }
 
 .navBarLinkItem {
@@ -28,8 +43,13 @@
 
 .navBarLinkItemText {
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+        border-bottom: 2px solid #e5e5e5;
+    }
 }
 
-.navBarLinkItemText:hover {
-    border-bottom: 2px solid #e5e5e5;
+.navBarDotsItem {
+    margin-inline-end: 15px;
 }

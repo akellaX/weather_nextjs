@@ -1,5 +1,7 @@
 import styles from './NavBar.module.css';
 import { WINDOW_SIZES } from '@/constants/windowSizes';
+import TripleDotsButton from '@/components/TripleDotsButton/TripleDotsButton';
+import SignInButton from '@/components/SignInButton/SignInButton';
 
 const weatherItems = [
     'Weather',
@@ -19,7 +21,7 @@ const weatherItems = [
 const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
     MOBILE: 3,
     TABLET: 5,
-    DESKTOP: 11,
+    DESKTOP: 10,
 };
 const feedItems = ['My Feed', 'Following'];
 
@@ -27,7 +29,7 @@ export default function NavBar() {
     const shownWeatherItems = weatherItems.slice(0, NUMBER_OF_ITEMS.DESKTOP);
     return (
         <nav className={styles.navBar}>
-            <div className={styles.navBarItem}>
+            <div className={`${styles.navBarItem} ${styles.navBarItemFeed}`}>
                 {feedItems.map((item) => (
                     <div
                         key={item}
@@ -36,7 +38,7 @@ export default function NavBar() {
                     </div>
                 ))}
             </div>
-            <div className={styles.navBarItem}>
+            <div className={`${styles.navBarItem} ${styles.navBarItemWeather}`}>
                 {shownWeatherItems.map((item) => (
                     <div
                         key={item}
@@ -45,7 +47,12 @@ export default function NavBar() {
                     </div>
                 ))}
             </div>
-            <div className={styles.navBarItem} />
+            <div className={styles.navBarItem}>
+                <div className={styles.navBarDotsItem}>
+                    <TripleDotsButton />
+                </div>
+                <SignInButton />
+            </div>
         </nav>
     );
 }
