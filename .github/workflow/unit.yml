@@ -1,0 +1,24 @@
+name: Unit tests
+run-name: ${{ github.actor }} is executing unit tests
+
+on: [push]
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.4.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Unit tests
+        run: npm run test:unit
