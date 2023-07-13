@@ -1,7 +1,7 @@
 name: Visual Regression tests
 run-name: ${{ github.actor }} is visual regression testing
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   Test:
