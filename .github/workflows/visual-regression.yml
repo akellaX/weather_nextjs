@@ -1,7 +1,7 @@
 name: Visual Regression tests
 run-name: ${{ github.actor }} is visual regression testing
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   Test:
@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: '20.4.0'
 
-      - name: Unit test
-        run: npm run docker:test:unit
+      - name: Visual Regression test
+        run: npm run docker:test:screenshot
 
       - name: Upload test's artifacts
         uses: actions/upload-artifact@v3
