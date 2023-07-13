@@ -11,6 +11,12 @@ const meta: Meta<typeof NavBar> = {
 export default meta;
 type Story = StoryObj<typeof NavBar>;
 
-export const LargeNavBar: Story = {
+export const Default: Story = {
     args: {},
+};
+
+export const DarkTheme: Story = {
+    args: {
+        darkTheme: true,
+    },
 };

@@ -11,6 +11,11 @@ const meta: Meta<typeof SignInButton> = {
 export default meta;
 type Story = StoryObj<typeof SignInButton>;
 
-export const signInButton: Story = {
+export const Default: Story = {
     args: {},
+};
+export const DarkTheme: Story = {
+    args: {
+        darkTheme: true,
+    },
 };

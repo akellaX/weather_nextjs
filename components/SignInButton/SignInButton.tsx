@@ -1,13 +1,21 @@
 'use client';
 import styles from './SignInButton.module.css';
 
-export default function SignInButton() {
+type SignInButtonProps = {
+    darkTheme?: boolean;
+};
+
+export default function SignInButton({ darkTheme }: SignInButtonProps) {
+    const imgSrc = darkTheme ? '/svg/userIconWhite.svg' : '/svg/userIcon.svg';
     return (
-        <button className={styles.signInButton}>
-            <p className={styles.signInLabel}>Sign In</p>
+        <button
+            className={`${styles.signInButton} ${
+                darkTheme ? styles.signInButtonDarkTheme : ''
+            }`}>
+            <p>Sign In</p>
             <img
                 className={styles.logo}
-                src='/svg/userIcon.svg'
+                src={imgSrc}
             />
         </button>
     );

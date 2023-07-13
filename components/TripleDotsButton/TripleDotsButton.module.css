@@ -2,7 +2,7 @@
     width: 32px;
     height: 32px;
     color: #000;
-    background: #FFF;
+    background: transparent;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -17,4 +17,11 @@
 .text {
     padding-bottom: 8px;
     font-size: 18px;
+}
+
+.tripleDotsDarkTheme {
+    color: #ffffff;
+    &:hover {
+        background: #303030;
+    }
 }

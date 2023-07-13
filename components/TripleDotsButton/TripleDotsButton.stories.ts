@@ -5,12 +5,17 @@ const meta: Meta<typeof TripleDotsButton> = {
     title: 'components/TripleDotsButton',
     component: TripleDotsButton,
     tags: ['autodocs'],
-    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof TripleDotsButton>;
 
-export const tripleDotsButton: Story = {
+export const Default: Story = {
     args: {},
+};
+
+export const DarkTheme: Story = {
+    args: {
+        darkTheme: true,
+    },
 };

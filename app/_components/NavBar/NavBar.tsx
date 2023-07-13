@@ -3,6 +3,10 @@ import { WINDOW_SIZES } from '@/constants/windowSizes';
 import TripleDotsButton from '@/components/TripleDotsButton/TripleDotsButton';
 import SignInButton from '@/components/SignInButton/SignInButton';
 
+type NavBarProps = {
+    darkTheme?: boolean;
+};
+
 const weatherItems = [
     'Weather',
     'Maps',
@@ -25,10 +29,13 @@ const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
 };
 const feedItems = ['My Feed', 'Following'];
 
-export default function NavBar() {
+export default function NavBar({ darkTheme }: NavBarProps) {
     const shownWeatherItems = weatherItems.slice(0, NUMBER_OF_ITEMS.DESKTOP);
     return (
-        <nav className={styles.navBar}>
+        <nav
+            className={`${styles.navBar} ${
+                darkTheme ? styles.navBarDarkTheme : ''
+            }`}>
             <div className={`${styles.navBarItem} ${styles.navBarItemFeed}`}>
                 {feedItems.map((item) => (
                     <div
@@ -49,9 +56,9 @@ export default function NavBar() {
             </div>
             <div className={styles.navBarItem}>
                 <div className={styles.navBarDotsItem}>
-                    <TripleDotsButton />
+                    <TripleDotsButton darkTheme={darkTheme} />
                 </div>
-                <SignInButton />
+                <SignInButton darkTheme={darkTheme} />
             </div>
         </nav>
     );

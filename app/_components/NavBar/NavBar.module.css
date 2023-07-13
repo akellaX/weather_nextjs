@@ -53,3 +53,14 @@
 .navBarDotsItem {
     margin-inline-end: 15px;
 }
+
+.navBarDarkTheme {
+    background-color: #242424;
+    color: #f5f5f5;
+
+    .navBarLinkItemText {
+        &:hover {
+            border-bottom: 2px solid #3d3d3d;
+        }
+    }
+}
