@@ -13,7 +13,7 @@ const weatherItems = [
     '3D Maps',
     'Hourly Forecast',
     'Monthly Forecast',
-    'Severe Weather',
+    'Severe',
     'Hurricanes',
     'Pollen',
     'Air Quality',
