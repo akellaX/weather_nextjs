@@ -1,0 +1,28 @@
+name: Visual Regression tests
+run-name: ${{ github.actor }} is visual regression testing
+
+on: [push]
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.4.0'
+
+      - name: Unit test
+        run: npm run docker:test:unit
+
+      - name: Upload test's artifacts
+        uses: actions/upload-artifact@v3
+        if: ${{ always() }}
+        with:
+          name: test-report
+          path: cypress/snapshots
