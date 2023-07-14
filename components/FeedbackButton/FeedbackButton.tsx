@@ -3,7 +3,8 @@
 import styles from './FeedbackButton.module.css';
 import Image from 'next/image';
 
-export default function FeedbackButton() {
+export default function FeedbackButton({ longText }: { longText?: boolean }) {
+    const text = longText ? 'Seeing different weather?' : 'Report weather';
     return (
         <button className={styles.feedbackButton}>
             <Image
@@ -13,7 +14,7 @@ export default function FeedbackButton() {
                 width={16}
                 height={16}
             />
-            <div>Report weather</div>
+            <div>{text}</div>
         </button>
     );
 }

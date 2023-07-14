@@ -4,6 +4,7 @@ import { getConditionProps } from '@/libs/getConditionProps/getConditionProps';
 import Image from 'next/image';
 import FeedbackButton from '@/components/FeedbackButton/FeedbackButton';
 import Link from 'next/link';
+import OverviewCardGrid from '@/app/_components/OverviewCardGrid/OverviewCardGrid';
 
 type OverviewCardProps = {
     weatherData: OverviewCardData;
@@ -12,6 +13,7 @@ type OverviewCardProps = {
 export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
     const { symbol } = weatherData;
     const conditionData = getConditionProps(symbol);
+    const isLarge = size === 'large';
     const timeOptions = {
         hour: 'numeric' as const,
         minute: 'numeric' as const,
@@ -22,7 +24,8 @@ export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
         timeOptions
     );
     return (
-        <div className={styles.overviewCard}>
+        <div
+            className={`${styles.overviewCard} ${isLarge ? styles.large : ''}`}>
             <Image
                 className={styles.backgroundImage}
                 src={conditionData.backgroundHref}
@@ -36,14 +39,14 @@ export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
                     <span className={styles.headerLabel}>Current weather</span>
                     <span className={styles.time}>{timeString}</span>
                 </div>
-                <FeedbackButton />
+                <FeedbackButton longText={isLarge} />
             </div>
             <div className={styles.bodyRow}>
                 <Image
                     src={conditionData.iconHref}
                     alt={conditionData.name}
-                    width={56}
-                    height={56}
+                    width={isLarge ? 72 : 56}
+                    height={isLarge ? 72 : 56}
                 />
                 <Link
                     href='/maps'
@@ -61,7 +64,17 @@ export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
                     </span>
                 </Link>
             </div>
-            <div className={styles.footerRow}></div>
+            {isLarge && (
+                <p className={styles.description}>
+                    Expect sunny skies. The high will be 30°.
+                </p>
+            )}
+            <div className={styles.footerRow}>
+                <OverviewCardGrid
+                    weatherData={weatherData}
+                    isLargeCard={isLarge}
+                />
+            </div>
         </div>
     );
 }

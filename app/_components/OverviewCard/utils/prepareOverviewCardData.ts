@@ -14,6 +14,7 @@ export interface OverviewCardData {
     symbol: string;
     shotDescription: string;
     responseTime: Date;
+    airQuality: string;
 }
 
 export const prepareOverviewCardData = (
@@ -32,6 +33,7 @@ export const prepareOverviewCardData = (
         degreeSetting,
         symbol,
         shortCap,
+        aqi,
     } = data.forecast.currentCondition;
     return {
         temperature: currentTemperature,
@@ -49,5 +51,6 @@ export const prepareOverviewCardData = (
         responseTime: new Date(
             data.forecast.currentCondition.currentRaw.created
         ),
+        airQuality: aqi,
     };
 };

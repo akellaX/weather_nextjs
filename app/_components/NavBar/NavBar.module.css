@@ -39,6 +39,7 @@
 
 .navBarLinkItem {
     padding: 10px 16px;
+    text-decoration: none;
 }
 
 .navBarLinkItemText {
