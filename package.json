@@ -18,8 +18,7 @@
     "test:unit": "cypress run --component --spec '**/*.unit.cy.ts'",
     "test:screenshot:new": "cypress run --component --env updateSnapshots=true",
     "docker:test:screenshot": "docker build -t unit-test:0.4 . && docker run --mount type=bind,source=\"$(pwd)\"/cypress,target=/app/cypress unit-test:0.4",
-    "docker:test:screenshot:update": "docker build -t unit-test:0.4 . && docker run  --env updateSnapshots=true --mount type=bind,source=\"$(pwd)\"/cypress,target=/app/cypress unit-test:0.4",
-    "mock-server": "node mock-server.js"
+    "docker:test:screenshot:update": "docker build -t unit-test:0.4 . && docker run  --env updateSnapshots=true --mount type=bind,source=\"$(pwd)\"/cypress,target=/app/cypress unit-test:0.4"
   },
   "husky": {
     "hooks": {
@@ -68,7 +67,6 @@
     "eslint-plugin-storybook": "^0.6.12",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "node-mock-server": "^0.25.4",
     "postcss": "^8.4.25",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.0.0",

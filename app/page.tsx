@@ -4,7 +4,7 @@ import OverviewCard from '@/app/_components/OverviewCard/OverviewCard';
 import { prepareOverviewCardData } from '@/app/_components/OverviewCard/utils/prepareOverviewCardData';
 
 async function getWeatherData(): Promise<WeatherData> {
-    const response = await fetch('http://localhost:3001/rest/v1/weather/');
+    const response = await fetch('http://localhost:3000/mocks/weatherApi.json');
     return await response.json();
 }
 
