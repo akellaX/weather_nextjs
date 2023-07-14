@@ -3,7 +3,7 @@ import { WeatherData } from '@/types/WeatherDataServerResponse';
 import OverviewCard from '@/app/_components/OverviewCard/OverviewCard';
 import { prepareOverviewCardData } from '@/app/_components/OverviewCard/utils/prepareOverviewCardData';
 
-export async function getWeatherData(): Promise<WeatherData> {
+async function getWeatherData(): Promise<WeatherData> {
     const response = await fetch('http://localhost:3001/rest/v1/weather/');
     return await response.json();
 }
