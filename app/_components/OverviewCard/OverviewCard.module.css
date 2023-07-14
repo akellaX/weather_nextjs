@@ -1,0 +1,97 @@
+.overviewCard {
+    width: 300px;
+    height: 270px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.headerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bodyRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bodyText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 86px;
+    margin-inline-start: 3px;
+}
+
+.temperatureText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.temperature {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 600;
+}
+
+.units {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 14px;
+    margin-bottom: auto;
+}
+
+.temperatureCaption {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.footerRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.footerItem {
+    text-align: center;
+}
+
+.backgroundImage {
+    z-index: -10;
+}
+
+.time {
+    height: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.headerLabel {
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.headerTextWrapper {
+    display: flex;
+    flex-direction: column;;
+    text-align: start;
+}

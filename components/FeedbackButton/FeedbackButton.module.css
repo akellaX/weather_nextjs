@@ -1,0 +1,21 @@
+.feedbackButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 32px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), rgb(44, 70, 108);
+    font-size: 12px;
+    line-height: 14px;
+    padding: 8px 6px 8px 9px;
+    color: #FFF;
+    backdrop-filter: blur(15px);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: inherit;
+}
+
+.icon {
+    margin-inline-end: 7px;
+}
