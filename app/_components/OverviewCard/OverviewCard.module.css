@@ -101,7 +101,11 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
-    margin: 16px 0;
+    margin-top: 0;
+    margin-bottom: 9px;
+    height: 65px;
+    display: flex;
+    align-items: center;
 }
 
 .large {
@@ -113,6 +117,9 @@
     }
     & .units {
         font-size: 34px;
+    }
+    & .footerRow {
+        margin-top: 0;
     }
 }
 

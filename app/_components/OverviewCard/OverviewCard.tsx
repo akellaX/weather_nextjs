@@ -32,7 +32,9 @@ export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
                 alt={conditionData.name}
                 layout='fill'
                 objectFit='cover'
-                quality={100}
+                {...(process.env.NEXT_PUBLIC_SCREENSHOT_TEST === 'true'
+                    ? { unoptimized: true }
+                    : {})}
             />
             <div className={styles.headerRow}>
                 <div className={styles.headerTextWrapper}>
