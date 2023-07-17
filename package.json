@@ -13,29 +13,22 @@
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "cypress:open": "cypress open",
-    "test:screenshot": "cypress run --component --spec '**/*.screenshot.cy.tsx'",
-    "test:unit": "cypress run --component --spec '**/*.unit.cy.ts'",
-    "test:screenshot:new": "cypress run --component --env updateSnapshots=true",
+    "cypress:open": "env-cmd -f .env.test cypress open",
+    "test:screenshot": "env-cmd -f .env.test cypress run --component --spec '**/*.screenshot.cy.tsx'",
+    "test:unit": "env-cmd -f .env.test cypress run --component --spec '**/*.unit.cy.ts'",
+    "test:screenshot:new": "env-cmd -f .env.test cypress run --component --env updateSnapshots=true",
     "docker:test:screenshot": "docker build -t unit-test:0.4 . && docker run --mount type=bind,source=\"$(pwd)\"/cypress,target=/app/cypress unit-test:0.4",
     "docker:test:screenshot:update": "docker build -t unit-test:0.4 . && docker run  --env updateSnapshots=true --mount type=bind,source=\"$(pwd)\"/cypress,target=/app/cypress unit-test:0.4",
-    "mock-server": "node mock-server.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{css,scss}": [
       "npm run stylelint:fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
@@ -49,6 +42,7 @@
   },
   "devDependencies": {
     "@cypress/webpack-dev-server": "^3.5.0",
+    "@storybook/addon-backgrounds": "^7.0.27",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
     "@storybook/addon-links": "^7.0.27",
@@ -63,12 +57,12 @@
     "cssnano": "^6.0.1",
     "cypress": "^12.17.1",
     "cypress-image-snapshot": "^4.0.1",
+    "env-cmd": "^10.1.0",
     "eslint": "8.44.0",
     "eslint-config-next": "^13.1.1",
     "eslint-plugin-storybook": "^0.6.12",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
-    "node-mock-server": "^0.25.4",
     "postcss": "^8.4.25",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.0.0",

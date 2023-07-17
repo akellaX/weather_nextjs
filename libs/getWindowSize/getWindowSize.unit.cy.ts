@@ -1,5 +1,5 @@
-import { getWindowSize } from '@/libs/getWindowSize';
 import { WINDOW_SIZES } from '@/constants/windowSizes';
+import { getWindowSize } from '@/libs/getWindowSize/getWindowSize';
 
 describe('getWindowSize', () => {
     it('returns MOBILE when width is less than MOBILE', () => {
