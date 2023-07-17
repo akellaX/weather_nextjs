@@ -1,8 +1,11 @@
 .main {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     padding: 6rem;
     min-height: 100vh;
+    display: grid;
+    grid-template-rows: 310px auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    background: linear-gradient(rgb(36, 77, 114) 0%, rgb(7, 33, 59) 100%);
 }

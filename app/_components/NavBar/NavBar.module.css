@@ -14,17 +14,17 @@
     color: rgb(43 43 43);
     font-size: 14px;
     line-height: 20px;
+    z-index: 5;
 }
 
 .navBarItem {
     display: flex;
     flex-direction: row;
-
 }
 
 .navBarItemFeed {
     &:after {
-        content: "";
+        content: '';
         height: 14px;
         align-self: center;
         padding-inline-start: 18px;

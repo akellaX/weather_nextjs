@@ -8,7 +8,12 @@
     padding: 16px;
     border-radius: 6px;
     overflow: hidden;
-    font-family: Segoe UI, Segoe WP, Arial, Sans-Serif, serif;
+    font-family:
+        Segoe UI,
+        Segoe WP,
+        Arial,
+        Sans-Serif,
+        serif;
     box-sizing: border-box;
 }
 
@@ -16,11 +21,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .bodyRow {
     display: flex;
     flex-direction: row;
+    z-index: 2;
     align-items: center;
 }
 
@@ -67,6 +74,7 @@
 
 .footerRow {
     margin-top: 24px;
+    z-index: 2;
 }
 
 .footerItem {
@@ -74,7 +82,7 @@
 }
 
 .backgroundImage {
-    z-index: -10;
+    z-index: 1;
 }
 
 .time {
@@ -93,7 +101,7 @@
 
 .headerTextWrapper {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     text-align: start;
 }
 
@@ -106,12 +114,13 @@
     height: 65px;
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .large {
     width: 620px;
     height: 270px;
-    & .temperature  {
+    & .temperature {
         font-size: 64px;
         line-height: 62px;
     }
@@ -122,4 +131,3 @@
         margin-top: 0;
     }
 }
-

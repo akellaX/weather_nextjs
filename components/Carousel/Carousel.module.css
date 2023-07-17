@@ -1,0 +1,55 @@
+.carouselWrapper {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.carouselContainer {
+    overflow-x: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+    height: 100%;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.carouselItem {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.carouselChevron {
+    position: absolute;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+    &:disabled {
+        visibility: hidden;
+    }
+}
+
+.leftChevron {
+    left: -8px;
+    transform: rotate(180deg);
+}
+
+.rightChevron {
+    right: -8px;
+}

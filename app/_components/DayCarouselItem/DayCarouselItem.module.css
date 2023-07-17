@@ -1,0 +1,115 @@
+.dayCarouselItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 37px 18px 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        cursor: pointer;
+    }
+}
+
+.itemWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.dayInfo {
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 4px 0;
+}
+
+.tempInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 6px;
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    margin-left: 14px;
+}
+
+.topTemp {
+    font-weight: 600;
+}
+
+.lowerTemp {
+    opacity: 0.8;
+}
+
+.expanded {
+    &.dayCarouselItem {
+        width: 303px;
+        padding-left: 24px;
+        padding-right: 24px;
+        &.dayCarouselItem:after {
+            display: block;
+            content: '';
+            border-width: 8px 6px;
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.08) transparent transparent
+                transparent;
+            position: absolute;
+            transform: translateX(120px);
+            width: 0;
+            bottom: 2px;
+        }
+    }
+}
+
+.additionalInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 48px;
+    justify-content: space-between;
+    opacity: 0.8;
+}
+
+.condition {
+    text-align: right;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.humidity {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.humidityIcon {
+    margin-inline-end: 4px;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
