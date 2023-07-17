@@ -9,8 +9,7 @@
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100vw;
     font-family: 'Segoe UI', sans-serif;
     color: rgb(43 43 43);
     font-size: 14px;

@@ -8,6 +8,9 @@ const meta: Meta<typeof OverviewCardGrid> = {
     title: 'components/OverviewCardGrid',
     component: OverviewCardGrid,
     tags: ['autodocs'],
+    parameters: {
+        backgrounds: { default: 'darkBlue' },
+    },
 };
 
 export default meta;
