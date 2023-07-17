@@ -5,5 +5,6 @@ module.exports = {
         'postcss-flexbugs-fixes',
         'postcss-preset-env',
         'stylelint',
+        'postcss-discard-unused',
     ],
 };

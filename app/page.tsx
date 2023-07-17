@@ -3,6 +3,8 @@ import { WeatherData } from '@/types/WeatherDataServerResponse';
 import OverviewCard from '@/app/_components/OverviewCard/OverviewCard';
 import { prepareOverviewCardData } from '@/app/_components/OverviewCard/utils/prepareOverviewCardData';
 import * as weatherDataJson from '@/public/mocks/weatherApi.json';
+import DayCarousel from '@/app/_components/DayCarousel/DayCarousel';
+import { prepareDayCarouselData } from '@/app/_components/DayCarousel/utils/prepareDayCarouselData';
 
 // async function getWeatherData(): Promise<WeatherData> {
 //     const response = await fetch('http://localhost:3000/mocks/weatherApi.json');
@@ -18,6 +20,7 @@ export default async function Home() {
                 weatherData={prepareOverviewCardData(weatherData)}
                 size={'small'}
             />
+            <DayCarousel item={prepareDayCarouselData(weatherData)} />
         </main>
     );
 }
