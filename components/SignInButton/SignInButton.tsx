@@ -6,6 +6,7 @@ type SignInButtonProps = {
 };
 
 export default function SignInButton({ darkTheme }: SignInButtonProps) {
+    // my comment
     const imgSrc = darkTheme ? '/svg/userIconWhite.svg' : '/svg/userIcon.svg';
     return (
         <button
