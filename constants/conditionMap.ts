@@ -11,4 +11,9 @@ export const CONDITION_MAP: ConditionMap = {
         icon: 'n2000',
         background: 'n2000',
     },
+    d0000: {
+        name: 'Sunny',
+        icon: 'd0000',
+        background: 'd0000',
+    },
 };

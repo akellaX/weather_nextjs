@@ -1,0 +1,32 @@
+.title {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16px;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.gridElement {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover .title {
+        text-decoration: underline;
+    }
+}
+
+.text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textRow {
+    display: flex;
+    flex-direction: row;
+}
