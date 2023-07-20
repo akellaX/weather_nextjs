@@ -1,0 +1,133 @@
+.overviewCard {
+    width: 300px;
+    height: 270px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family:
+        Segoe UI,
+        Segoe WP,
+        Arial,
+        Sans-Serif,
+        serif;
+    box-sizing: border-box;
+}
+
+.headerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.bodyRow {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    align-items: center;
+}
+
+.bodyText {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 86px;
+    margin-inline-start: 3px;
+    text-decoration: none;
+}
+
+.temperatureText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.temperature {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 600;
+}
+
+.units {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 14px;
+    margin-bottom: auto;
+}
+
+.temperatureCaption {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.footerRow {
+    margin-top: 24px;
+    z-index: 2;
+}
+
+.footerItem {
+    text-align: center;
+}
+
+.backgroundImage {
+    z-index: 1;
+}
+
+.time {
+    height: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.headerLabel {
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.headerTextWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 9px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.large {
+    width: 620px;
+    height: 270px;
+    & .temperature {
+        font-size: 64px;
+        line-height: 62px;
+    }
+    & .units {
+        font-size: 34px;
+    }
+    & .footerRow {
+        margin-top: 0;
+    }
+}
