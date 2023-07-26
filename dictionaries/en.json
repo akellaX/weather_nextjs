@@ -1,0 +1,29 @@
+{
+    "NavBar": {
+        "discover": "Discover",
+        "following": "Following",
+        "weather": "Weather",
+        "maps": "Maps",
+        "3Dmaps": "3D maps",
+        "hourlyForecast": "Hourly forecast",
+        "monthlyForecast": "Monthly forecast",
+        "severeWeather": "Severe weather",
+        "hurricane": "Hurricane",
+        "pollen": "Pollen",
+        "fireInformation": "Fire information",
+        "earthquakes": "Earthquakes",
+        "airQuality": "Air quality",
+        "recordsAndAverages": "Records and averages"
+    },
+    "overviewCard": {
+        "currentWeather": "Current weather",
+        "airQuality": "Air quality",
+        "wind": "Wind",
+        "visibility": "Visibility",
+        "uvIndex": "UV index",
+        "humidity": "Humidity",
+        "feelsLike": "Feels like",
+        "dewPoint": "Dew point",
+        "pressure": "Pressure"
+    }
+}

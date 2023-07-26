@@ -1,0 +1,29 @@
+{
+    "NavBar": {
+        "discover": "Открытия",
+        "following": "Отслеживание",
+        "weather": "Погода",
+        "maps": "Карты",
+        "3Dmaps": "3D Карты",
+        "hourlyForecast": "Часовой прогноз",
+        "monthlyForecast": "Месячный прогноз",
+        "severeWeather": "Суровая погода",
+        "hurricane": "Ураганы",
+        "pollen": "Пыльца",
+        "fireInformation": "Пожары",
+        "earthquakes": "Землетрясения",
+        "airQuality": "Качество воздуха",
+        "recordsAndAverages": "Рекорды и средние значения"
+    },
+    "overviewCard": {
+        "currentWeather": "Текущая погода",
+        "airQuality": "Качество воздуха",
+        "wind": "Ветер",
+        "visibility": "Видимость",
+        "uvIndex": "УФ-индекс",
+        "humidity": "Влажность",
+        "feelsLike": "Ощущается как",
+        "dewPoint": "Точка росы",
+        "pressure": "Давление"
+    }
+}
