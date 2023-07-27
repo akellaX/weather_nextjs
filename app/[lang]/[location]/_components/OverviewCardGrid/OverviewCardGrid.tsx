@@ -84,7 +84,6 @@ export default function OverviewCardGrid({
 }) {
     const gridStyle = isLargeCard ? styles.oneRowGrid : styles.twoRowGrid;
     const gridList = getGridList();
-    console.log('GRID LIST::: ', gridList);
     return (
         <div className={gridStyle}>
             {gridList.map((gridElement) => {

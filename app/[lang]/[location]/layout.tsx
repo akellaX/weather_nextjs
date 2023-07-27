@@ -26,31 +26,28 @@ export default async function RootLayout({
     };
     children: React.ReactNode;
 }) {
-    // let dictionaries;
+    // client i18n
     const lang = params.lang;
-    // if (typeof window !== undefined) {
-    //     try {
-    //         dictionaries = (await import(`../dictionaries/${lang}.json`))
-    //             .default;
-    //     } catch (error) {
-    //         notFound();
-    //     }
-    // }
+    let messages;
+    try {
+        messages = (await import(`@/messages/${lang}.json`)).default;
+    } catch (error) {
+        notFound();
+    }
+    // server i18n
     const locale = useLocale();
-
-    // Show a 404 error if the user requests an unknown locale
     if (lang !== locale) {
         notFound();
     }
     return (
         <html lang={locale}>
             <body className={inter.className}>
-                {/*<NextIntlClientProvider*/}
-                {/*    locale={lang}*/}
-                {/*    messages={dictionaries}>*/}
-                <NavBar />
-                {children}
-                {/*</NextIntlClientProvider>*/}
+                <NextIntlClientProvider
+                    locale={lang}
+                    messages={messages}>
+                    <NavBar />
+                    {children}
+                </NextIntlClientProvider>
             </body>
         </html>
     );
