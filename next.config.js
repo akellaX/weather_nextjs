@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
-// const StylelintPlugin = require('stylelint-webpack-plugin');
-// line to add
-const nextConfig = {
-    // reactStrictMode: true,
-    // // lines to add
-    // webpack: (config) => {
-    //   config.plugins.push(new StylelintPlugin());
-    //   return config;
-    // },
-};
-module.exports = nextConfig;
+const withNextIntl = require('next-intl/plugin')(
+    // This is the default (also the `src` folder is supported out of the box)
+    './i18n.ts'
+);
+
+module.exports = withNextIntl({
+    // Other Next.js configuration ...
+});
