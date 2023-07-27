@@ -5,18 +5,13 @@ import FeedbackButton from '@/components/FeedbackButton/FeedbackButton';
 import Link from 'next/link';
 import { OverviewCardData } from '@/app/[lang]/[location]/_components/OverviewCard/utils/prepareOverviewCardData';
 import OverviewCardGrid from '@/app/[lang]/[location]/_components/OverviewCardGrid/OverviewCardGrid';
-import { Dictionary } from '@/types/Dictionary';
+import { useTranslations } from 'next-intl';
 
 type OverviewCardProps = {
     weatherData: OverviewCardData;
     size: 'small' | 'large';
-    localization: Dictionary;
 };
-export default function OverviewCard({
-    weatherData,
-    size,
-    localization,
-}: OverviewCardProps) {
+export default function OverviewCard({ weatherData, size }: OverviewCardProps) {
     const { symbol } = weatherData;
     const conditionData = getConditionProps(symbol);
     const isLarge = size === 'large';
@@ -29,6 +24,7 @@ export default function OverviewCard({
         'en-US',
         timeOptions
     );
+    const t = useTranslations('overviewCard');
     return (
         <div
             className={`${styles.overviewCard} ${isLarge ? styles.large : ''}`}>
@@ -45,7 +41,7 @@ export default function OverviewCard({
             <div className={styles.headerRow}>
                 <div className={styles.headerTextWrapper}>
                     <span className={styles.headerLabel}>
-                        {localization.overviewCard.currentWeather}
+                        {t('currentWeather')}
                     </span>
                     <span className={styles.time}>{timeString}</span>
                 </div>
@@ -83,7 +79,6 @@ export default function OverviewCard({
                 <OverviewCardGrid
                     weatherData={weatherData}
                     isLargeCard={isLarge}
-                    localization={localization}
                 />
             </div>
         </div>

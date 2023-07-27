@@ -7,18 +7,10 @@ import { prepareOverviewCardData } from '@/app/[lang]/[location]/_components/Ove
 import DayCarousel from '@/app/[lang]/[location]/_components/DayCarousel/DayCarousel';
 import { prepareDayCarouselData } from '@/app/[lang]/[location]/_components/DayCarousel/utils/prepareDayCarouselData';
 import OverviewCard from '@/app/[lang]/[location]/_components/OverviewCard/OverviewCard';
-import { getDictionary } from '@/get-dictionary';
-import { Locale } from '@/i18n-config';
-
-// async function getWeatherData(): Promise<WeatherData> {
-//     const response = await fetch('http://localhost:3000/mocks/weatherApi.json');
-//     return await response.json();
-// }
 
 interface MainPageProps {
     params: {
         location: string;
-        lang: Locale;
     };
 }
 
@@ -27,12 +19,10 @@ export default async function MainPage({ params }: MainPageProps) {
     if (params.location === 'redmond') {
         weatherData = redmondMock as unknown as WeatherData;
     }
-    const localization = await getDictionary(params.lang);
     const conditionSymbol = weatherData.forecast.currentCondition.symbol;
     return (
         <main className={clsx(styles.main, styles[`${conditionSymbol}`])}>
             <OverviewCard
-                localization={localization}
                 weatherData={prepareOverviewCardData(weatherData)}
                 size={'small'}
             />

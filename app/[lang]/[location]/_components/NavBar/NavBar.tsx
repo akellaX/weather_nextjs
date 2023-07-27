@@ -4,11 +4,10 @@ import TripleDotsButton from '@/components/TripleDotsButton/TripleDotsButton';
 import SignInButton from '@/components/SignInButton/SignInButton';
 import Link from 'next/link';
 import { getWeatherItems } from '@/app/[lang]/[location]/_components/NavBar/weatherItems';
-import { Dictionary } from '@/types/Dictionary';
+import { useTranslations } from 'next-intl';
 
 type NavBarProps = {
     darkTheme?: boolean;
-    localization: Dictionary;
 };
 
 const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
@@ -18,8 +17,9 @@ const NUMBER_OF_ITEMS: Record<keyof typeof WINDOW_SIZES, number> = {
 };
 const feedItems = ['My Feed', 'Following'];
 
-export default async function NavBar({ darkTheme, localization }: NavBarProps) {
-    const weatherItems = getWeatherItems(localization);
+export default function NavBar({ darkTheme }: NavBarProps) {
+    const t = useTranslations('navBar');
+    const weatherItems = getWeatherItems(t);
     const shownWeatherItems = weatherItems.slice(0, NUMBER_OF_ITEMS.DESKTOP);
     return (
         <nav

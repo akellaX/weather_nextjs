@@ -1,6 +1,16 @@
 import type { Preview } from '@storybook/react';
+import { NextIntlClientProvider } from 'next-intl';
 
 const preview: Preview = {
+    decorators: [
+        (Story) => (
+            <div style={{ margin: '3em' }}>
+                <NextIntlClientProvider>
+                    <Story />
+                </NextIntlClientProvider>
+            </div>
+        ),
+    ],
     parameters: {
         backgrounds: {
             default: 'light',

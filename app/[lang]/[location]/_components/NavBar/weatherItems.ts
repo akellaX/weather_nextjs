@@ -1,54 +1,51 @@
-import { Dictionary } from '@/types/Dictionary';
-
-export const getWeatherItems = (localization: Dictionary) => {
-    const NavBar = localization.NavBar;
+export const getWeatherItems = (t: (key: string) => string) => {
     return [
         {
-            title: NavBar.weather,
+            title: t('weather'),
             href: '/',
         },
         {
-            title: NavBar.maps,
+            title: t('maps'),
             href: '/',
         },
         {
-            title: NavBar['3Dmaps'],
+            title: t('3Dmaps'),
             href: '/',
         },
         {
-            title: NavBar.hourlyForecast,
+            title: t('hourlyForecast'),
             href: '/hourlyforecast',
         },
         {
-            title: NavBar.monthlyForecast,
+            title: t('monthlyForecast'),
             href: '/',
         },
         {
-            title: NavBar.severeWeather,
+            title: t('severeWeather'),
             href: '/',
         },
         {
-            title: NavBar.hurricane,
+            title: t('hurricane'),
             href: '/',
         },
         {
-            title: NavBar.pollen,
+            title: t('pollen'),
             href: '/',
         },
         {
-            title: NavBar.airQuality,
+            title: t('airQuality'),
             href: '/',
         },
         {
-            title: NavBar.fireInformation,
+            title: t('fireInformation'),
             href: '/',
         },
         {
-            title: NavBar.earthquakes,
+            title: t('earthquakes'),
             href: '/',
         },
         {
-            title: NavBar.recordsAndAverages,
+            title: t('recordsAndAverages'),
             href: '/',
         },
     ];
