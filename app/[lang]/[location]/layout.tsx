@@ -28,10 +28,13 @@ export default async function RootLayout({
 }) {
     // let dictionaries;
     const lang = params.lang;
-    // try {
-    //     dictionaries = (await import(`../dictionaries/${lang}.json`)).default;
-    // } catch (error) {
-    //     notFound();
+    // if (typeof window !== undefined) {
+    //     try {
+    //         dictionaries = (await import(`../dictionaries/${lang}.json`))
+    //             .default;
+    //     } catch (error) {
+    //         notFound();
+    //     }
     // }
     const locale = useLocale();
 

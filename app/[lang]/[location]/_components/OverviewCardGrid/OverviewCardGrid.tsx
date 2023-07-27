@@ -6,7 +6,6 @@ import {
     ChildrenPosition,
     OverviewCardGridElement,
 } from '@/app/[lang]/[location]/_components/OverviewCardGridElement/OverviewCardGridElement';
-import { Dictionary } from '@/types/Dictionary';
 import { useTranslations } from 'next-intl';
 
 type GridElement = {
@@ -76,7 +75,7 @@ const getGridList = (): GridElement[] => {
     ];
 };
 
-export default async function OverviewCardGrid({
+export default function OverviewCardGrid({
     weatherData,
     isLargeCard,
 }: {
@@ -85,6 +84,7 @@ export default async function OverviewCardGrid({
 }) {
     const gridStyle = isLargeCard ? styles.oneRowGrid : styles.twoRowGrid;
     const gridList = getGridList();
+    console.log('GRID LIST::: ', gridList);
     return (
         <div className={gridStyle}>
             {gridList.map((gridElement) => {

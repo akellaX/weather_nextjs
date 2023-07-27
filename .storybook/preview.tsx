@@ -1,17 +1,38 @@
 import type { Preview } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
+import { reactIntl } from './reactIntl';
+import * as enMessages from '@/messages/en.json';
+import * as ruMessages from '@/messages/ru.json';
+import { useGlobals } from '@storybook/addons';
 
 const preview: Preview = {
+    globals: {
+        locale: reactIntl.defaultLocale,
+        locales: {
+            en: 'English',
+            ru: 'Russian',
+        },
+    },
     decorators: [
-        (Story) => (
-            <div style={{ margin: '3em' }}>
-                <NextIntlClientProvider>
-                    <Story />
-                </NextIntlClientProvider>
-            </div>
-        ),
+        (Story) => {
+            const [{ locale }] = useGlobals();
+            const messages = {
+                en: enMessages,
+                ru: ruMessages,
+            };
+            return (
+                <div style={{ margin: '3em' }}>
+                    <NextIntlClientProvider
+                        locale={locale}
+                        messages={messages[locale]}>
+                        <Story />
+                    </NextIntlClientProvider>
+                </div>
+            );
+        },
     ],
     parameters: {
+        reactIntl,
         backgrounds: {
             default: 'light',
             values: [
