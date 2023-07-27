@@ -9,8 +9,8 @@ const preview: Preview = {
     globals: {
         locale: reactIntl.defaultLocale,
         locales: {
-            en: 'English',
-            ru: 'Russian',
+            en: { title: 'English', left: '🇬🇧' },
+            ru: { title: 'Russian', left: '🇷🇺' },
         },
     },
     decorators: [
